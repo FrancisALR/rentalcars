@@ -34,10 +34,10 @@ public class JsonParser {
 		Gson gson = new Gson();
 		try {
 			JsonObject object = gson.fromJson(new FileReader(file_path), JsonObject.class);
-			JsonArray arrayVehicles = object.getAsJsonObject("Search").getAsJsonArray("VehicleList");
+			JsonArray vehicleArray = object.getAsJsonObject("Search").getAsJsonArray("VehicleList");
 			
-			for (int i=0; i < arrayVehicles.size(); i++) {
-				Vehicle vehicle = gson.fromJson(arrayVehicles.get(i), Vehicle.class);
+			for (int i=0; i < vehicleArray.size(); i++) {
+				Vehicle vehicle = gson.fromJson(vehicleArray.get(i), Vehicle.class);
 				vehicles.add(vehicle);
 			};
 			
@@ -101,7 +101,7 @@ public class JsonParser {
 	}
 	
 	public static void formatArrListQ3(ArrayList<Vehicle> a) {
-		for (int i = 0; i < a.size() ; i++) {
+		for (int i = 0; i < a.size() ; i++) {  
 			System.out.printf("%2d. %s - %s - %s - %s%n", i+1, a.get(i).getName(), a.get(i).getSipp(), a.get(i).getRating(), a.get(i).getSupplier());
 		}	
 	}

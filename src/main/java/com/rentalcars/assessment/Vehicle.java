@@ -10,10 +10,10 @@ public class Vehicle {
 	private String supplier;
 	private float rating;
 	
-	private static HashMap<String, String> carTypeHash = new HashMap<String, String>();
-    private static HashMap<String, String> doorTypeHash = new HashMap<String, String>();
-    private static HashMap<String, String> transmissionTypeHash = new HashMap<String, String>();
-    private static HashMap<String, String> airConTypeHash = new HashMap<String, String>();
+	private static HashMap<String, String> carTypeMap = new HashMap<String, String>();
+    private static HashMap<String, String> doorTypeMap = new HashMap<String, String>();
+    private static HashMap<String, String> tranmissionTypeMap = new HashMap<String, String>();
+    private static HashMap<String, String> airConTypeMap = new HashMap<String, String>();
 	
 
 	public Vehicle(String name, String sipp, float price, String supplier, float rating) {
@@ -71,25 +71,25 @@ public class Vehicle {
     
     public String getCarType() {
 	    	String type = new String();
-	    	type = carTypeHash.get(sipp.substring(0,1));
+	    	type = carTypeMap.get(sipp.substring(0,1));
 	    	return type;
     }
     
     public String getDoorType() {
 	    	String type = new String();
-	    	type = doorTypeHash.get(sipp.substring(1,2));
+	    	type = doorTypeMap.get(sipp.substring(1,2));
 	    	return type;
     }
     
     public String getTransmissionType() {
 	    	String type = new String();
-	    	type = transmissionTypeHash.get(sipp.substring(2,3));
+	    	type = tranmissionTypeMap.get(sipp.substring(2,3));
 	    	return type;
     }
     
     public String getAirConType() {
 	    	String type = new String();
-	    	type = airConTypeHash.get(sipp.substring(3,4));
+	    	type = airConTypeMap.get(sipp.substring(3,4));
 	    	return type;
     }
     
@@ -120,33 +120,33 @@ public class Vehicle {
     }
     
     public static void createHashes() {
-    	carTypeHash.put("M", "Mini");
-        carTypeHash.put("E", "Economy");
-        carTypeHash.put("C", "Compact");
-        carTypeHash.put("I", "Intermediate");
-        carTypeHash.put("S", "Standard");
-        carTypeHash.put("F", "Full size");
-        carTypeHash.put("P", "Premium");
-        carTypeHash.put("L", "Luxury");
-        carTypeHash.put("X", "Special");
+    	carTypeMap.put("M", "Mini");
+        carTypeMap.put("E", "Economy");
+        carTypeMap.put("C", "Compact");
+        carTypeMap.put("I", "Intermediate");
+        carTypeMap.put("S", "Standard");
+        carTypeMap.put("F", "Full size");
+        carTypeMap.put("P", "Premium");
+        carTypeMap.put("L", "Luxury");
+        carTypeMap.put("X", "Special");
 
         // Doors/car type map
-        doorTypeHash.put("B", "2 doors");
-        doorTypeHash.put("C", "4 doors");
-        doorTypeHash.put("D", "5 doors");
-        doorTypeHash.put("W", "Estate");
-        doorTypeHash.put("T", "Convertible");
-        doorTypeHash.put("F", "SUV");
-        doorTypeHash.put("P", "Pick up");
-        doorTypeHash.put("V", "Passenger Van");
-
+        doorTypeMap.put("B", "2 doors");
+        doorTypeMap.put("C", "4 doors");
+        doorTypeMap.put("D", "5 doors");
+        doorTypeMap.put("W", "Estate");
+        doorTypeMap.put("T", "Convertible");
+        doorTypeMap.put("F", "SUV");
+        doorTypeMap.put("P", "Pick up");
+        doorTypeMap.put("V", "Passenger Van");
+  
         // Transmission map
-        transmissionTypeHash.put("M", "Manual");
-        transmissionTypeHash.put("A", "Automatic");
+        tranmissionTypeMap.put("M", "Manual");
+        tranmissionTypeMap.put("A", "Automatic");
 
         // Fuel/Air con map
-        airConTypeHash.put("N", "Petrol/no AC");
-        airConTypeHash.put("R", "Petrol/AC");
+        airConTypeMap.put("N", "Petrol/no AC");
+        airConTypeMap.put("R", "Petrol/AC");
     }
 
 }
